@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" alt="" class="logo" width="100" height="100">
+            <ul>
+                <li>
+                    <a href="#">
+                        Ana Sayfa
+                        <img src="anasayfa.png" alt="Ana Sayfa Hover Logosu" class="logo-hover" width="100" height="100">
+                    </a>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Projelerim</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Proje 1</a></li>
+                        <li><a href="#">Proje 2</a></li>
+                        <li><a href="#">Proje 3</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Galerim</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="#section2">Denemelerim</a>
+                            <ul class="submenu">
+                                <li><a href="#section2">Başarılı Denemelerim</a></li>
+                                <li><a href="#section2">Başarısız Denemelerim</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#section2">Ben</a>
+                            <ul class="submenu">
+                                <li><a href="#section2">Arkadaşlarım</a></li>
+                                <li><a href="#section2">Ailem</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#section2">İşlerim</a>
+                            <ul class="submenu">
+                                <li><a href="#section2">Ekibim</a></li>
+                                <li><a href="#section2">Ödüllerimiz</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section2">Manzara</a></li>
+                        <li><a href="#section2">Gezi</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Hakkımda</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Kişisel Bilgiler</a></li>
+                        <li><a href="#">Eğitim</a></li>
+                        <li><a href="#">Deneyim</a></li>
+                        <li><a href="#">Hobiler</a></li>
+                    </ul>
+                </li>                
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </div>
+
+        <div class="marquee-container">
+            <marquee direction="left" scrollamount="5">
+                Hoşgeldiniz! Bu web sitesinde en yeni projelerimi ve galerimi keşfedebilirsiniz.
+                <!-- İletişim bağlantısı eklendi -->
+                <a href="#iletisim" style="color: blue; text-decoration: underline;">İletişim için buraya tıklayın</a>
+            </marquee>
+        </div>
+        
+
+        <div class="content">
+            <h1>Ömer Faruk Kara</h1>
+            <p>Sosyal Medyam</p>
+            <a href="https://www.facebook.com/omerfaruk.kara.7773" class="icon facebook"><span>Facebook</span></a>
+            <a href="https://x.com/merFaru61008115" class="icon twitter"><span>Twitter</span></a>
+            <a href="https://github.com/codeomerfa" class="icon github"><span>Github</span></a>
+            <a href="https://www.instagram.com/omer_farukk_kara/" class="icon instagram"><span>instagram</span></a>
+            <a href="https://tr.pinterest.com/pbgmerfaruk/" class="icon pinterest"><span>Pinterest</span></a>
+        
+        </div>
+    </div>
+
+
+        <div class="section" id="section1">
+
+        </div>
+    
+        <div class="section" id="section2">
+            <h2>Galerim</h2>
+            <div class="tab-container">
+                <button class="tab-button" onclick="openTab(event, 'denemelerim')">Denemelerim</button>
+                <button class="tab-button" onclick="openTab(event, 'islerim')">İşlerim</button>
+                <button class="tab-button" onclick="openTab(event, 'manzara')">Manzara</button>
+                <button class="tab-button" onclick="openTab(event, 'gezi')">Gezi</button>
+            </div>
+        
+            <div id="denemelerim" class="tab-content">
+                <img src="deneme1.jpg" alt="Deneme 1" onclick="changeImage(this)">
+                <img src="deneme2.jpeg" alt="Deneme 2" onclick="changeImage(this)">
+                <img src="deneme3.jpeg" alt="Deneme 3" onclick="changeImage(this)">
+            </div>
+        
+            <div id="islerim" class="tab-content" style="display: none;">
+                <img src="is1.jpeg" alt="İş 1" onclick="changeImage(this)">
+                <img src="is2.jpeg" alt="İş 2" onclick="changeImage(this)">
+                <img src="is3.jpg" alt="İş 3" onclick="changeImage(this)">
+            </div>
+
+            <div id="manzara" class="tab-content" style="display: none;">
+                <img src="manzara1.jpg" alt="Manzara 1" onclick="changeImage(this)">
+                <img src="manzara2.jpg" alt="Manzara 2" onclick="changeImage(this)">
+                <img src="manzara3.jpg" alt="Manzara 3" onclick="changeImage(this)">
+            </div>
+        
+            <div id="gezi" class="tab-content" style="display: none;">
+                <img src="gezi1.jpg" alt="Gezi 1" onclick="changeImage(this)">
+                <img src="gezi2.jpg" alt="Gezi 2" onclick="changeImage(this)">
+                <img src="gezi3.jpg" alt="Gezi 3" onclick="changeImage(this)">
+            </div>
+        </div>
+        
+    <section id="iletisim">
+        <div class="form-container">
+            <h2>İletişime Geç</h2>
+            <!-- içeriği -->
+            <form>
+                <input type="text" placeholder="İsim*" required>
+                <input type="email" placeholder="Email*" required>
+                <input type="text" placeholder="Konu*" required>
+                <textarea placeholder="Mesajınız" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </section>
+    
+ 
+    <div class="info-box">    <!-- havadurumu ve döviz  -->
+        <div id="weather">
+            <h3>Hava Durumu</h3>
+            <p id="city">Şehir: Aksaray</p>
+            <p id="temp">Sıcaklık: -- °C</p>
+            <p id="condition">Durum: --</p>
+        </div>
+        <div id="exchange">
+            <h3>Döviz Kuru</h3>
+            <p id="usd">USD/TRY: --</p>
+            <p id="eur">EUR/TRY: --</p>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // iletişim  seçme
+    const contactLink = document.querySelector('.navbar ul li a[href="#iletisim"]');
+    
+    if (contactLink) {
+        contactLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#iletisim').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+});
+    </script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.navbar a[href^="#section2"]');
+    
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+    </script>
+
+    <script>
+        const weatherApiKey = "7e585580624d19101f777dcc1eae9a7b";
+        const city = "Ankara";
+        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric&lang=tr`;
+        
+        const exchangeApiKey = "8902e5b47eb363bdfc1c2018";
+        const exchangeApiUrl = `https://v6.exchangerate-api.com/v6/${exchangeApiKey}/latest/TRY`;
+        
+        // Hava durumunu 
+        async function fetchWeather() {
+            try {
+                const response = await fetch(weatherApiUrl);
+                const data = await response.json();
+                document.getElementById("city").textContent = `Şehir: ${data.name}`;
+                document.getElementById("temp").textContent = `Sıcaklık: ${data.main.temp} °C`;
+                document.getElementById("condition").textContent = `Durum: ${data.weather[0].description}`;
+            } catch (error) {
+                console.error("Hava durumu verisi alınamadı:", error);
+            }
+        }
+        
+        // Döviz 
+        async function fetchExchangeRates() {
+            try {
+                const response = await fetch(exchangeApiUrl);
+                const data = await response.json();
+                document.getElementById("usd").textContent = `USD/TRY: ${data.conversion_rates.USD}`;
+                document.getElementById("eur").textContent = `EUR/TRY: ${data.conversion_rates.EUR}`;
+            } catch (error) {
+                console.error("Döviz kuru verisi alınamadı:", error);
+            }
+        }
+        
+        window.onload = () => {
+            fetchWeather();
+            fetchExchangeRates();
+            setInterval(fetchWeather, 600000); // 10 dakikada bir güncelle
+            setInterval(fetchExchangeRates, 600000); // 10 dakikada bir güncelle
+        };
+        </script>
+
+
+<script> // resim için olan kısım
+
+    function openTab(event, tabName) {
+    var i, tabcontent, tabbuttons;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none"; // içerikleri gizler
+    }
+
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "flex";
+    event.currentTarget.className += " active"; // seçileni göster
+}
+
+function changeImage(imgElement) {
+    // koddaki pop up u bu çıkarıyo resme tıklayınca
+    alert("Resim değişti: " + imgElement.alt); 
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(laptop.jpg); /* resime o renkten katar alttan üste doğru */
+    background-position: center;/* fotoyu neresinden itibaren koycağını belirtir*/
+    background-size: cover; /* sayfaya oturur laptop isimli foto */
+    z-index: 0; /* Banner en arka planda */
+}
+
+/* İlk bölüm arka planı */
+#section1 {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url('work-1.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+/* İkinci bölüm arka planı */
+#section2 {
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url('work-2.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.tab-container {
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+}
+
+.tab-button:hover, .tab-button.active {
+  background-color: #333;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-content img {
+  width: 250px; /*resi boyur*/
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.tab-content img:hover {
+  transform: scale(2); /*mauseni üstüne getirince resmin büyüme miktarını belirtir*/
+}
+
+/* Logo için temel stil */
+.logo {
+  cursor: pointer;/* yuvarlaştırmak */    
+  border-radius: 50%; 
+  filter: blur(0.01px); /* Başlangıçta hafif bulanıklık */
+  transition: filter 0.3s ease; /* Yumuşak geçiş efekti */
+  width:125px;
+  height:100px;
+  animation: logoSequence 5s ease infinite; /* animasyon zincirini  */
+}
+@keyframes logoSequence {
+  0% {
+      transform: rotate(0deg);
+  }
+  33% {
+      transform: rotate(360deg); /* döndürme Animasyonu */
+  }
+  34% {
+      transform: scale(1); 
+  }
+  66% {
+      transform: scale(1.1); /* büyültme Animasyonu */
+  }
+  67% {
+      transform: translateY(0); 
+  }
+  100% {
+      transform: translateY(-10px); /* yukarı/aşağı   */
+  }
+}
+
+
+
+
+.navbar{
+   display: flex;
+   width: 90%;
+   margin: auto;
+   padding: 32px;
+   align-items: center;
+   justify-content: space-between; 
+   z-index: 200; /*en önde olmasına yarıyo */
+
+}
+
+.navbar ul li{
+    list-style-type: none; /* normalde hakkında ansayfanın önünde nokta var onu kaldırıyo */
+    display: inline-block; /* yan yana yazılmasına yarıyor */
+    margin: 0 25px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none; /* altındaki çizgiyi kaldırıyo */
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Menü geçiş efekti */
+}
+
+.navbar ul li a .logo-hover {
+  display: none; /* boşta görünmez */
+  position: fixed; /* hareketsiz sabit kalsın */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*  ortalamak için */
+  width: 300px; 
+  height: 300px;
+  z-index: 1000; /*  görünmesi için */
+}
+
+.navbar ul li:first-child a:hover .logo-hover {
+  display: block; /* resmi gösterir */
+}
+
+
+
+/* opaklık  */
+.navbar ul li:nth-child(2):hover {
+  opacity: 0.1;
+  transition: opacity 1s ease-in-out;
+  z-index: 201
+}
+
+/*  renk değişikliği */
+.navbar ul li:nth-child(3):hover > a {
+  color: #ff6347; 
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00; /* Hover rengi */
+  background-color: #444; /* Hover  arka plan rengi */
+}
+
+.navbar ul li.dropdown {/* dropdown menü  */
+  position: relative;
+}
+
+.navbar ul li .dropdown-menu {
+  display: none; /* başlangıçta görünmez */
+  position: absolute;
+  top: 100%; /* ana menünün altına yerleştirir */
+  left: 0;
+  background-color: #333; /* arkaplan rengi */
+  padding: 10px 0;
+  list-style-type: none;
+  min-width: 150px;
+  z-index: 201
+}
+
+.navbar ul li .dropdown-menu li {
+  width: 100%;
+  padding: 10px;
+}
+
+.navbar ul li .dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 20px;
+}
+
+.navbar ul li .dropdown-menu li a:hover { /* hover efekti arka plan */
+  background-color: #555;
+}
+
+.navbar ul li.dropdown:hover .dropdown-menu {
+  display: block; /* üzerine gelindiğinde görünür hale gelir bundan */
+}
+/* fareyle üzerine gelindiğinde dropdown menünün görünmesini sağlama */
+
+/* dropdawnların da yanında çıkan menüler */
+.navbar ul li .dropdown-menu li.dropdown-submenu:hover .submenu {
+  display: block;
+}
+
+.navbar ul li .dropdown-menu li .submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #444;
+  padding: 10px 0;
+  min-width: 150px;
+}
+
+.navbar ul li .dropdown-menu li .submenu li a {
+  padding: 8px 20px;
+}
+
+.navbar ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.marquee-container { /* kayan yazı */
+  background-color: rgba(51, 51, 51, 0.7); /* 0.7 saydam lik miktarı */
+  color: #fff; /* rengi */
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+marquee a {
+  color: #007bff; 
+  font-weight: bold; /* yazı tpi */
+  text-decoration: none; /* altçizgiyi kaldır */
+}
+
+marquee a:hover {
+  color: #ff5722; /* Turuncu linke renk */
+  text-decoration: underline; /* üzerine gelince alt çizgi ekleme */
+  transition: color 0.3s ease; /* geçiş efekti */
+}
+marquee a {
+  border: 2px solid #007bff; /*  çerçeve */
+  padding: 4px 8px; /* boşluk */
+  border-radius: 5px; /* yuvarlk kenarlar */
+}
+marquee a:hover {
+  background-color: #e6f7ff; /* hover arka plan */
+}
+marquee a {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+
+
+
+.content{
+    width: 100%;
+    position: absolute; /* sayfayı ortalıycak */
+    top: 40%; /* yukardan %40 boşluk bırakır */
+    color: white;
+    text-align: center; /*  sağdan soldan ortalar */  
+}
+.content h1{/* contentin altındaki h1 i etkilesin diye ayrıca  açtım */
+ font-size: 65px;
+}
+.content p{
+    margin: 20px auto;/* sağ sol 20 picel boşluk bırakıp ortalamak için */
+}
+.info-box {  /*dolar hava durumu kutusu  */
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 120px;
+  font-size: 14px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #ffcc00;
+} 
+
+
+#iletisim {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffcc00;
+}
+
+.form-container form input,
+.form-container form textarea,
+.form-container form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: none;
+}
+
+.form-container form button {
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*  iletiişm kutuları */
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.8), 0 0 20px rgba(255, 204, 0, 0.6); /*parlama efekti*/
+}
+
+a:hover {
+  transform: scale(1.3); /* biraz büyütme (navbarda dropdawn kısmında mause yi tutunca büyüyo) */ 
+
+}
+a {
+  text-decoration: none;
+  color: #333;
+  transition: text-shadow 0.3s ease;
+}
+
+
+
+a.icon:before { /* ortada ismimim altındaki facebook github vb simhesi için*/
+    font-family: "FontAwesome", sans-serif;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  a.facebook:before {
+    content: '\f09a';
+  }
+  
+  a.twitter:before {
+    content: '\f099';
+  }
+  
+  a.github:before {
+    content: '\f113';
+  }
+  
+  a.pinterest:before {
+    content: '\f0d2';
+  }
+
+  a.instagram:before {
+    content: '\f16d';
+  }
+
+  
+  a span {
+    background: #fff;
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    position:  absolute;
+    bottom: 0;
+    left: -25px;
+    right: -25px;
+    padding: 5px 7px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+  }
+  
+  a span:before {
+    content: '';
+  /*   width: 0;
+    height: 0; */
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 40px;
+  }
+  
+  a:hover span {
+    bottom: 50px;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  
+  a.facebook:hover {
+    background-color: #4183d7; 
+    color: #bfbfbf;
+  }
+
+  a.facebook span {
+    color: #4183d7;
+  }
+
+  a.twitter:hover {
+    background-color: #19b5fe;
+    color: #fff;
+  }
+
+  a.twitter span {
+    color: #19b5fe;
+  }
+  
+  a.github:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  a.github span {
+    color: #000;
+  }
+  a.pinterest:hover {
+    background-color: #f22613;
+    color: #fff;
+  }
+  
+  a.pinterest span {
+    color: #f22613;
+  }
+
+  a.instagram:hover {
+    background-color: #e4405f; /* Instagram'ın rengine uygun */
+    color: #fff;
+  }
+  
+  a.instagram span {
+    color: #e4405f; /* Instagram'ın rengine uygun */
+  }
+  
+  
+    
